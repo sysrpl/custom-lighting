@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC610459-7616-4C83-A3EF-9EB30A6E8265}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Neopixels</RootNamespace>
+    <AssemblyName>Neopixels</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseMSBuildEngine>false</UseMSBuildEngine>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Effects\Effects.cs" />
+    <Compile Include="Entities\Channel.cs" />
+    <Compile Include="Entities\Controller.cs" />
+    <Compile Include="Entities\Light.cs" />
+    <Compile Include="Entities\Settings.cs" />
+    <Compile Include="Entities\Strip.cs" />
+    <Compile Include="Entities\StripType.cs" />
+    <Compile Include="Native\PInvoke.cs" />
+    <Compile Include="Native\ws2811_channel_t.cs" />
+    <Compile Include="Native\ws2811_return_t.cs" />
+    <Compile Include="Native\ws2811_t.cs" />
+    <Compile Include="Tools\Tools.cs" />
+    <Compile Include="Entities\Effect.cs" />
+    <Compile Include="Geometry\Point.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Geometry\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
